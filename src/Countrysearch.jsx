@@ -29,15 +29,14 @@ function Countries() {
         fetch(API)
             .then((response) => response.json())
             .then((data) => {
-                console.log("Fetched Countries Data:", data);
+                console.log("Fetched Countries Data:", data);  // Debugging
                 setCountries(data);
             })
             .catch((error) => console.error("Error fetching data:", error));
     }, []);
 
-    // Filter countries based on search input
-    const filteredCountries = countries.filter(({ name }) => 
-        search.trim() === "" || name.toLowerCase().includes(search.toLowerCase())
+    const filteredCountries = countries.filter((country) =>
+        country.name.toLowerCase().includes(search.toLowerCase())
     );
 
     return (
@@ -49,7 +48,7 @@ function Countries() {
                 sx={{ width: "900px", mb: 2 }} 
                 onChange={(e) => setSearch(e.target.value)} 
             />
-            
+
             <div style={{
                 display: "flex",
                 alignItems: "center",
@@ -62,7 +61,7 @@ function Countries() {
                         <Card key={abbr} name={name} flag={flag} />
                     ))
                 ) : (
-                    <p>No results found</p>
+                    <p>No results found</p>  
                 )}
             </div>
         </>

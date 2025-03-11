@@ -1,21 +1,11 @@
 import { useEffect, useState } from "react";
 import { TextField } from "@mui/material";
+import styles from './Countrysearch.module.css';
 
 const Card = ({ flag, name }) => {
     return (
-    <div style={{
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
-        justifyContent: "center",
-        width: '200px',
-        height: '200px',
-        border: "1px solid black",
-        borderRadius: '5px',
-        textAlign: "center",
-        
-    }}>
-        <img src={flag} alt={`flag of ${name}`} style={{ width: "100px", height: "100px" }}/>
+        <div className={styles.countryCard}>
+        <img src={flag} alt={`flag of ${name}`} />
         <h2>{name}</h2>
     </div>
     );

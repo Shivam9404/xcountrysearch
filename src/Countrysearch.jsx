@@ -37,10 +37,10 @@ function Countries() {
     return (
         <>
 
-        <TextField 
+            <TextField 
                 id="outlined-search" 
                 label="Search for countries" 
-                type="search" 
+                type="text" 
                 sx={{ width: "900px", mb: 2 }} 
                 onChange={(e) => setSearch(e.target.value)} 
             />

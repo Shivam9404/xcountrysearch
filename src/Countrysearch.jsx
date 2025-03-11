@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { TextField } from "@mui/material";
-import './Countrysearch.module.css';
+import './Countrysearch.css';
 
 const Card = ({ flag, name }) => {
     return (

@@ -43,7 +43,7 @@ function Countries() {
         }}>
             {countries
             .filter((country) => {
-            return search.toLowerCase() === '' ? country : country.common.toLowerCase().includes(search);
+            return search.trim() === "" || country.common.toLowerCase().includes(search.toLowerCase());
             }).map((country) => (
             <Card key={country.common} name={country.common} flag={country.png} />
             ))}
